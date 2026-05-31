@@ -1,7 +1,7 @@
 # mesh-takes-blitz
 
 [![pages](https://img.shields.io/badge/live-baditaflorin.github.io%2Fmesh-takes-blitz-00bbff)](https://baditaflorin.github.io/mesh-takes-blitz/)
-[![version](https://img.shields.io/badge/version-0.1.0-blue)](https://github.com/baditaflorin/mesh-takes-blitz/blob/main/package.json)
+[![version](https://img.shields.io/badge/version-0.1.1-blue)](https://github.com/baditaflorin/mesh-takes-blitz/blob/main/package.json)
 [![license](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 
 > Auto-streaming hot takes every 6s; tap rocket/think/trash; scoreboard.
