@@ -8,6 +8,7 @@ import {
   useNamedPeer,
   usePhase,
   useReactions,
+  useRoster,
   type MeshConfig,
   type YRoom,
 } from "@baditaflorin/mesh-common";
@@ -33,8 +34,11 @@ function Body({ room, config }: { room: YRoom; config: MeshConfig }) {
   const clock = useMemo(() => createClockSync(room.provider), [room]);
   useEffect(() => () => clock.destroy(), [clock]);
   const slot = useMeshSlot(clock, SLOT_MS);
-
-  const fairRng = useFairRng(room, "blitz-salts");
+  const roster = useRoster(room);
+  const fairRng = useFairRng(room, "blitz-salts", {
+    peerIds: roster.present,
+    minContributors: 1,
+  });
   const takesLog = useEventLog<Take>(room, "takes");
   const reactions = useReactions(room, "take-reactions");
   const { phase, transition } = usePhase<"writing" | "streaming" | "done">(
